@@ -1,0 +1,2 @@
+#start from here
+#bowtie2 for resistome
