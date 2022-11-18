@@ -1,2 +1,33 @@
 #start from here
 #bowtie2 for resistome
+
+name='A210123'
+bowtie2 -x /Volumes/WDMS_5T/Chapter3/CARD_database/card-data-3.2.5/CARD325_bowtiedb/CARD325_NC_bowtiedb \
+-q -1 /Volumes/WDMS_5T/Chapter3/Trimmomatic_results/"$name"_R1_paired.fastq.gz -2 /Volumes/WDMS_5T/Chapter3/Trimmomatic_results/"$name"_R2_paired.fastq.gz \
+--no-unal -p 16 -S "$name"_NC.sam
+
+
+samtools view -b -o "$name"_NC.raw.bam "$name"_NC.sam
+
+
+for i in Q*_BL.raw.bam
+do
+echo "$i"
+samtools view -c -F 260 "$i"
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
