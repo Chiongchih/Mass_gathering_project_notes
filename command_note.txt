@@ -16,10 +16,24 @@ echo "$i"
 samtools view -c -F 260 "$i"
 done
 
+#metaphlan4
+merge_metaphlan_tables.py *_mpa2.txt > merged_mpa2_table.txt
+#need to create species table first.
+vim merged_mpa2_species.txt
+grep -E "s__|clade" merged_mpa2_table.txt | grep -v "t__" | sed "s/^.*|//g" | sed "s/clade_name/body_site/g" | sed "s/SRS[0-9]*-//g" merged_mpa2_species.txt
 
 
-
-
+hclust2.py \
+-i merged_mpa2_species.txt \
+-o metaphlan4_abundance_heatmap_species.png \
+--f_dist_f braycurtis \
+--s_dist_f braycurtis \
+--cell_aspect_ratio 0.5 \
+--log_scale \
+--flabel_size 10 --slabel_size 10 \
+--max_flabel_len 100 --max_slabel_len 100 \
+--minv 0.1 \
+--dpi 300
 
 
 
