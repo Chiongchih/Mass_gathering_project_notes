@@ -38,7 +38,10 @@ hclust2.py \
 
 ###Run RGI local###
 rgi load --card_json /Volumes/WDMS_5T/Chapter3/CARD_database/RGI_database/card.json --local
-
+rgi main --input_sequence /Volumes/Changzhi_WD4T/Chapter2_datasets/MegaHIT_assembly/EJH-MT-061520.reformat_contigs.fa \
+--output_file /Volumes/Changzhi_WD4T/Chapter2_datasets/MegaHIT_assembly/EJH-MT-061520.reformat_contigs.rgi.output \
+--input_type contig \
+--local --clean --num_threads 8
 
 
 
