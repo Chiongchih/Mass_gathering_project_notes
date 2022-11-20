@@ -36,6 +36,8 @@ hclust2.py \
 --dpi 300
 
 
+###Run RGI local###
+rgi load --card_json /Volumes/WDMS_5T/Chapter3/CARD_database/RGI_database/card.json --local
 
 
 
