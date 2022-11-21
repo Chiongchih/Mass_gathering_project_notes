@@ -43,7 +43,14 @@ rgi main --input_sequence /Volumes/Changzhi_WD4T/Chapter2_datasets/MegaHIT_assem
 --input_type contig \
 --local --clean --num_threads 8
 
-
+#Quick check rgi results
+for i in *.output.txt
+do
+if grep -q beta-lactamase "$i";
+then echo "$i"
+grep beta-lactamase "$i"
+fi
+done
 
 
 
