@@ -52,6 +52,12 @@ grep beta-lactamase "$i"
 fi
 done
 
+for i in $(cat Sample_listA.txt)
+do
+samtools depth "$i"_NC.raw.bam.sorted.bam > "$i"_NC.coverage.txt
+done
+#Then run Breadth_of_coverage_sam_chapter3.py to get the breadth/depth of each ARG. #
+
 
 
 
