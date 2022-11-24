@@ -59,7 +59,26 @@ done
 #Then run Breadth_of_coverage_sam_chapter3.py to get the breadth/depth of each ARG. #
 #Also remember to further normalize ARG with total number of metagenome#
 
+ls -1 >> ALA_MAG_filenames.txt
+for name in $(cat ALA_MAG_filenames.txt)
+do
+sed 's/^/'$name'&/g' "$name" > "$name"_for_merge.txt
+done
 
+cat *.rgi.output.txt_for_merge.txt > sum_ALA_rgi.output.txt
+
+makeblastdb -in .fasta -dbtype nucl -parse_seqids -hash_index -out MGEsdb1
+
+prodigal -q -i EJH-MT-042220.reformat_contigs.fa -o EJH-MT-042220.reformat_contigs.fa.genes -a EJH-MT-042220.reformat_contigs.fa.proteins.faa -p meta
+
+
+for name in *.reformat_contigs.fa
+do
+blastn -db ../../MGE_database/intI1_db/INTI1db1 -query "$name" -out "$name".INTIblastn.out.txt -evalue 1e-7 -max_target_seqs 1 -num_threads 8 -outfmt 6
+done
+
+blastn -db ../../MGE_database/intI1/INTI1db1 -query BLcontigs_210123.fa -out BLcontigs_210123.inti1blastn.out.txt -evalue 1e-7 -max_target_seqs 1 -num_threads 8 -outfmt 6
+blastn -db ../../MGE_database/MGEsdb1/MGEsdb1 -query BLcontigs_210123.fa -out BLcontigs_210123.MGEblastn.out.txt -evalue 1e-7 -max_target_seqs 1 -num_threads 8 -outfmt 6
 
 
 
