@@ -80,6 +80,13 @@ done
 blastn -db ../../MGE_database/intI1/INTI1db1 -query BLcontigs_210123.fa -out BLcontigs_210123.inti1blastn.out.txt -evalue 1e-7 -max_target_seqs 1 -num_threads 8 -outfmt 6
 blastn -db ../../MGE_database/MGEsdb1/MGEsdb1 -query BLcontigs_210123.fa -out BLcontigs_210123.MGEblastn.out.txt -evalue 1e-7 -max_target_seqs 1 -num_threads 8 -outfmt 6
 
+#change fastq gz file names in batch
+oname=3
+nname=A220601
+numbername=0830
+numbername2=0029
+mv M-22-"$numbername"_"$oname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R1_001.fastq.gz M-22-"$numbername"_"$nname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R1_001.fastq.gz
+mv M-22-"$numbername"_"$oname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R2_001.fastq.gz M-22-"$numbername"_"$nname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R2_001.fastq.gz
 
 
 
