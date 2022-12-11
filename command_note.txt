@@ -88,6 +88,8 @@ numbername2=0029
 mv M-22-"$numbername"_"$oname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R1_001.fastq.gz M-22-"$numbername"_"$nname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R1_001.fastq.gz
 mv M-22-"$numbername"_"$oname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R2_001.fastq.gz M-22-"$numbername"_"$nname"_illumina-UDI"$numbername2"-illumina-UDI"$numbername2"_L001_R2_001.fastq.gz
 
+grep k__Bacteria$"\t"
+grep "k__Bacteria\t2" ""$file
 
 
 
