@@ -93,4 +93,8 @@ grep k__Bacteria$"\t"
 grep "k__Bacteria\t2" ""$file
 ###for ibex###
 for i in *_mpa2.txt; do echo "$i"; grep -E k__Bacteria$'\t' "$i"; done
-
+for i in *_mpa2.txt
+do
+ra=$(grep -E k__Bacteria$'\t' "$i")
+echo -e "$i $ra"
+done
