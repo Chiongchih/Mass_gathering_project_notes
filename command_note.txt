@@ -98,3 +98,11 @@ do
 ra=$(grep -E k__Bacteria$'\t' "$i")
 echo -e "$i $ra"
 done
+
+rep -E "(s__)|(^ID)" merged_mpa2_table_full.txt | grep -v "t__" | sed 's/^.*s__//g' > merged_mpa2_table_sp.txt
+
+
+
+
+
+
