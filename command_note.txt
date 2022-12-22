@@ -101,7 +101,13 @@ done
 
 rep -E "(s__)|(^ID)" merged_mpa2_table_full.txt | grep -v "t__" | sed 's/^.*s__//g' > merged_mpa2_table_sp.txt
 
-
+for i in *_contigs.fa
+do
+blastx -db /Volumes/WDMS_5T/Chapter3/Small_analysis/MCR_test/MCR_db/MCR1 \
+-query "$i" \
+-out "$i".blastx.out.txt \
+-evalue 1e-7 \
+-max_target_seqs 1 -num_threads 16 -outfmt 6; done
 
 
 
