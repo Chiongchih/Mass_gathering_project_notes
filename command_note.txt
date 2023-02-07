@@ -118,6 +118,17 @@ blastn -db /Volumes/WDMS_5T/Chapter3/Small_analysis/MCR_test/MGEsdb1/MGEsdb1 \
 -evalue 1e-7 \
 -max_target_seqs 1 -num_threads 16 -outfmt 6
 
+for i in *_contigs.fa
+do
+blastn -db /Volumes/WDMS_5T/Chapter3/Small_analysis/GES_test/GES_db/GES1_db \
+-query "$i" \
+-out "$i".GES1blastn.out.txt \
+-evalue 1e-7 \
+-max_target_seqs 1 -num_threads 16 -outfmt 6
+done
+
+
+
 
 #find a number with dot. because in grep, . seen as any random letter, so we need specify . by \ ahead of it and label it by ''.
 for i in *.out.txt; do grep '99\.' "$i"; echo "$i"; done
