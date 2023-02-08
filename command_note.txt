@@ -150,3 +150,14 @@ ggplot(genes, aes(xmin = start, xmax = end, y = contig, fill = gene, label = gen
 #find a number with dot. because in grep, . seen as any random letter, so we need specify . by \ ahead of it and label it by ''.
 for i in *.out.txt; do grep '99\.' "$i"; echo "$i"; done
 
+
+###prokka###
+prokka --outdir PROKKA_22 --metagenome 22_B_POU_final.contigs.fa
+prokka AU_bins_Burk.fa --outdir AU_bin_MRG_rawproduct --prefix AU_bin_MRG_rawproduct --norrna --notrna --proteins ../../AWVG_dbs/BacMet_EXP_prokka.faa --metagenome
+
+
+
+
+
+
+
