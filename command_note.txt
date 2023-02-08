@@ -127,8 +127,25 @@ blastn -db /Volumes/WDMS_5T/Chapter3/Small_analysis/GES_test/GES_db/GES1_db \
 -max_target_seqs 1 -num_threads 16 -outfmt 6
 done
 
+module load miniconda3/4.7.12.1
+source activate plaston
+#location of platon database
+ptdb=/home/wangc0c/Tools/platon_db/db
+platon --db ptdb genome.fasta
+platon --db ptdb /ibex/scratch/projects/c2190/Changzhi/PhD3/small_analysis/platon_test/NPS1_contigs_temp.fa
 
+library(gggenes)
+setwd("G:/我的云端硬盘/PhD2/Graph_makings")
 
+####R code###
+genes <- read.csv("PROKKA_CDSs.csv",header=TRUE)
+
+ggplot(genes, aes(xmin = start, xmax = end, y = contig, fill = gene, label = gene)) +
+  geom_gene_arrow(arrowhead_height = unit(3,"mm"), arrowhead_width = unit(2,"mm")) +
+  facet_wrap(~ contig, scales = "free", ncol = 1) +
+  scale_fill_manual(values =c("red","gold1","grey")) +
+  theme_genes()
+###R code###
 
 #find a number with dot. because in grep, . seen as any random letter, so we need specify . by \ ahead of it and label it by ''.
 for i in *.out.txt; do grep '99\.' "$i"; echo "$i"; done
