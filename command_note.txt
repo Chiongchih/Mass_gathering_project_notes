@@ -157,7 +157,7 @@ prokka AU_bins_Burk.fa --outdir AU_bin_MRG_rawproduct --prefix AU_bin_MRG_rawpro
 
 prokka --outdir pka_GES_try2 --metagenome GES1_contigs_temp_reformat2.fa
 
-
-
+#clinker usage
+clinker ./*.gbk -p
 
 
