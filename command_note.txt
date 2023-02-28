@@ -58,6 +58,8 @@ samtools depth "$i"_NC.raw.bam.sorted.bam > "$i"_NC.coverage.txt
 done
 #Then run Breadth_of_coverage_sam_chapter3.py to get the breadth/depth of each ARG. #
 #Also remember to further normalize ARG with total number of metagenome#
+#Then go to Chapter3_Breadth_of_coverage_sam_norm.py#
+
 
 ls -1 >> ALA_MAG_filenames.txt
 for name in $(cat ALA_MAG_filenames.txt)
