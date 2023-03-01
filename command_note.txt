@@ -60,7 +60,7 @@ done
 #Also remember to further normalize ARG with total number of metagenome#
 #Then go to Chapter3_Breadth_of_coverage_sam_norm.py#
 #Then run Chapter3_merge_coverage_sam_norm.py#
-
+#Then transpose the CSV file and run Chapter3_correlation_coeffient_ARG.py#
 
 
 
