@@ -19,6 +19,7 @@ module load miniconda3/4.7.12.1
 source activate anvio-7
 
 filename="P201128"
+#keep in mind concoct only work under 16 threads, double check if the concoct is running under 64 treads!
 anvi-script-reformat-fasta ../Megahit_contigs/"$filename"_asm/final.contigs.fa -o ../Megahit_contigs/"$filename"_asm/"$filename".reformat_contigs.fa -l 1000 --simplify-names
 gunzip ../Trim_output/"$filename"_paired_1.fastq.gz
 gunzip ../Trim_output/"$filename"_paired_2.fastq.gz
