@@ -136,9 +136,10 @@ done
 module load miniconda3/4.7.12.1
 source activate plaston
 #location of platon database
-ptdb=/home/wangc0c/Tools/platon_db/db
-platon --db ptdb genome.fasta
-platon --db ptdb /ibex/scratch/projects/c2190/Changzhi/PhD3/small_analysis/platon_test/NPS1_contigs_temp.fa
+#not work ptdb=/home/wangc0c/Tools/platon_db/db
+#not work platon --db ptdb genome.fasta
+#not work platon --db ptdb /ibex/scratch/projects/c2190/Changzhi/PhD3/small_analysis/platon_test/NPS1_contigs_temp.fa
+platon --db /home/wangc0c/Tools/platon_db/db SHV11_bin7.fa
 
 library(gggenes)
 setwd("G:/我的云端硬盘/PhD2/Graph_makings")
