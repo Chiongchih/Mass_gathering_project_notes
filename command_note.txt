@@ -134,7 +134,7 @@ blastn -db /Volumes/WDMS_5T/Chapter3/Small_analysis/GES_test/GES_db/GES1_db \
 done
 
 module load miniconda3/4.7.12.1
-source activate plaston
+source activate platon
 #location of platon database
 #not work ptdb=/home/wangc0c/Tools/platon_db/db
 #not work platon --db ptdb genome.fasta
