@@ -168,3 +168,57 @@ prokka --outdir pka_GES_try2 --metagenome GES1_contigs_temp_reformat2.fa
 clinker ./*.gbk -p
 
 
+#platon for MAGs
+module load miniconda3/4.7.12.1
+source activate platon
+for folder in Q111*_metawrap_refine_results
+do
+cd "$folder"/metawrap_70_10_bins/
+for i in *.fa
+do
+platon --db /home/wangc0c/Tools/platon_db/db "$i" --threads 16
+done
+cd ../../
+done
+
+#summarize results from platon
+for folder in *_refine_results
+do
+cd "$folder"/metawrap_70_10_bins
+for i in *.tsv
+do
+cp "$i" ../../platon_MAGs_results/"$folder"_"$i"
+done
+for j in *.plasmid.fasta
+do
+cp "$j" ../../platon_MAGs_results/"$folder"_"$j"
+done
+for k in *.chromosome.fasta
+do
+cp "$k" ../../platon_MAGs_results/"$folder"_"$k"
+done
+cd ../../
+done
+
+
+for folder in *_refine_results
+do
+cd "$folder"/metawrap_70_10_bins
+cd ../../ 
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
