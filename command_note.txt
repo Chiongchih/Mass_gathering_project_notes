@@ -165,7 +165,14 @@ prokka AU_bins_Burk.fa --outdir AU_bin_MRG_rawproduct --prefix AU_bin_MRG_rawpro
 prokka --outdir pka_GES_try2 --metagenome GES1_contigs_temp_reformat2.fa
 
 #clinker usage
+need to run python script first!
+contigs must be in indepedent gbk files
+Chapter3_modify_gbk.py
+Chapter3_modify_gbk_OXA.py
+create a folder to contain those gbk files!
+Example here: /Volumes/WDMS_5T/Chapter3/Small_analysis/GES_test/clinker/forclinker
 clinker ./*.gbk -p
+
 
 
 #platon for MAGs
