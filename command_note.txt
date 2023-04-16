@@ -214,8 +214,15 @@ cd "$folder"/metawrap_70_10_bins
 cd ../../ 
 done
 
-
-
+#constant pathogen collection
+mkdir Sflexneri_bins
+cat S_flexneri_list.txt | while read
+do
+sample=$(echo "$REPLY" | cut -f1)
+bin_old=$(echo "$REPLY" | cut -f2)
+bin=$(echo "$bin_old" | tr -d '\r')
+cp "$sample"_metawrap_refine_results/metawrap_70_10_bins/"$bin".* ./Sflexneri_bins/"$sample"_"$bin".fa
+done
 
 
 
