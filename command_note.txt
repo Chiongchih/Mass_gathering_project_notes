@@ -227,7 +227,10 @@ done
 seqtk seq -a A220710.fastq.gz > A220710_ONT.fa
 
 
-
+for file in *_GTDB
+do
+sample =$(echo "$file" | cut -f1)
+cp "$file"/gtdbtk.bac120.summary.tsv ./GTDB_result
 
 
 
