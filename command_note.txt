@@ -224,6 +224,17 @@ bin=$(echo "$bin_old" | tr -d '\r')
 cp "$sample"_metawrap_refine_results/metawrap_70_10_bins/"$bin".* ./Sflexneri_bins/"$sample"_"$bin".fa
 done
 
+
+mkdir Sflexneri_bins
+cat Sflexneri_list.txt | while read
+do
+sample=$(echo "$REPLY" | cut -f1)
+bin_old=$(echo "$REPLY" | cut -f2)
+bin=$(echo "$bin_old" | tr -d '\r')
+cp ../curated_refined_results/"$sample"_metawrap_refine_results/metawrap_70_10_bins/"$bin".* "$sample"_"$bin".fa
+done
+
+
 seqtk seq -a A220710.fastq.gz > A220710_ONT.fa
 
 
