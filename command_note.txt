@@ -244,6 +244,10 @@ sample =$(echo "$file" | cut -f1)
 cp "$file"/gtdbtk.bac120.summary.tsv ./GTDB_result
 
 
+for i in *_megahit
+do
+rm -r ./"$i"/intermediate_contigs/
+done
 
 
 
