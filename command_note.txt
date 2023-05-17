@@ -250,6 +250,8 @@ rm -r ./"$i"/intermediate_contigs/
 done
 
 
+# download err era ena datasets
+wget ftp link
 
 
 
