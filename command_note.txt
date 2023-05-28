@@ -253,6 +253,9 @@ done
 # download err era ena datasets
 wget ftp link
 
+#usage of projects?
+df -Th /ibex/project/c2221
+bquota -g ibex-c2190
 
 
 
