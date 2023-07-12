@@ -257,5 +257,6 @@ wget ftp link
 df -Th /ibex/project/c2221
 bquota -g ibex-c2190
 
-
+grep -A 1 1476847 ERR2683200.reformat_contigs.fa
+#show next line content of contig file
 
