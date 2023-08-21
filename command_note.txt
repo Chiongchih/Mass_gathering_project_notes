@@ -159,6 +159,7 @@ for i in *.out.txt; do grep '99\.' "$i"; echo "$i"; done
 
 
 ###prokka###
+module load prokka/1.14.6
 prokka --outdir PROKKA_22 --metagenome 22_B_POU_final.contigs.fa
 prokka AU_bins_Burk.fa --outdir AU_bin_MRG_rawproduct --prefix AU_bin_MRG_rawproduct --norrna --notrna --proteins ../../AWVG_dbs/BacMet_EXP_prokka.faa --metagenome
 
