@@ -279,19 +279,20 @@ fi
 done
 
 #!/bin/bash
+module load miniconda3/4.7.12.1
+source activate rgi
+rgi load --card_json /home/wangc0c/Tools/CARD_rgi/card.json --local
+source_parent_folder="/ibex/scratch/projects/c2190/Changzhi/PhD3/panglob_analysis/GSSC_datasets"
+rgi_results_folder="/ibex/scratch/projects/c2190/Changzhi/PhD3/panglob_analysis/GSSC_MAG_RGI"
 
-source_parent_folder="/path/to/source_parent_folder"
-target_folder="/path/to/target_folder"
-rgi_results_folder="./RGI_results"
-
-for refine_folder in "$source_parent_folder"/*_refine_results; do
+for refine_folder in "$source_parent_folder"/*_refine; do
 if [ -d "$refine_folder" ]; then
 metawrap_folder="$refine_folder/metawrap_70_10_bins"
 if [ -d "$metawrap_folder" ]; then
 for fa_file in "$metawrap_folder"/*.fa; do
 if [ -f "$fa_file" ]; then
 filename=$(basename "$fa_file" .fa)
-rgi_command="rgi main --input_sequence $fa_file --output_file $rgi_results_folder/$refine_folder_$filename.reformat_contigs.rgi.output --input_type contig --local --clean -n 16"
+rgi_command="rgi main --input_sequence $fa_file --output_file $rgi_results_folder/${refine_folder##*/}_$filename.reformat_contigs.rgi.output --input_type contig --local --clean -n 16"
 echo "Running RGI command: $rgi_command"
 eval "$rgi_command"
 fi
@@ -299,9 +300,6 @@ done
 fi
 fi
 done
-
-
-
 
 
 
