@@ -265,3 +265,16 @@ bquota -g ibex-c2190
 grep -A 1 1476847 ERR2683200.reformat_contigs.fa
 #show next line content of contig file
 
+for folder_path in "$source_folder"/*_GTDB
+do
+if [ -d "$folder_path" ]
+then source_file="$folder_path/gtdbtk.bac120.summary.tsv"
+if [ -f "$source_file" ]
+then new_file_name="$(basename "$folder_path").summary.tsv"
+destination_file="$destination_folder/$new_file_name"
+cp "$source_file" "$destination_file"
+echo "Copied $new_file_name"
+fi
+fi
+done
+
