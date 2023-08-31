@@ -1,6 +1,8 @@
 #start from here
 #bowtie2 for resistome
 
+bowtie2-build EJH-MT-"$name".reformat_contigs.fa ../Bowtie_dbs/EJH-MT-"$name".reformat_contigs.bowtie.db
+
 name='A210123'
 bowtie2 -x /Volumes/WDMS_5T/Chapter3/CARD_database/card-data-3.2.5/CARD325_bowtiedb/CARD325_NC_bowtiedb \
 -q -1 /Volumes/WDMS_5T/Chapter3/Trimmomatic_results/"$name"_R1_paired.fastq.gz -2 /Volumes/WDMS_5T/Chapter3/Trimmomatic_results/"$name"_R2_paired.fastq.gz \
