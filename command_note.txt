@@ -324,4 +324,13 @@ module load drep/1.4.3/gnu6.4.0_python3.5
 #dRep dereplicate ./i01e_dRep_confirmed_bins -g ./i01e_bins/*.fa
 dRep dereplicate ./dRep_passed_MAGs -g ./checkm_passed_MAGs/*.fa -p 16
 
-
+find "$source_dir" -type d -name 'xxx_refine_results' -print0 | while IFS= read -r -d '' folder; do
+subfolder="$folder/metawrap_70_10_bins"
+if [ -d "$subfolder" ]; then
+dest_folder="$destination_dir/$(basename "$folder")"
+mkdir -p "$dest_folder"
+cp -r "$folder" "$dest_folder/"
+cp -r "$subfolder" "$dest_folder/"
+echo "Copied $folder and $subfolder to $dest_folder"
+fi
+done
