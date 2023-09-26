@@ -1,0 +1,23 @@
+- LB agarose plate preparation:
+LB agar plate: 20g broth base+12g agar into 800ml water, 2 bottles (for 2 antibiotics), autoclave. 
+LB broth: 20g broth base into 800 ml water, autoclave. 
+50% Glycerol: 50ml glycerol + 50ml miliQ in 100ml bottle, autoclave. 
+Sterilized, put in 50C incubator, and add antibiotics (256 ul of 25mg/ml Meropenem, ceftazidime), and prepare plate. 
+
+- Mueller Hinton agarose plate preparation:
+MH broth: 21 g in 1000m, +17 g agar, or 
+16.8 g in 800 ml + 13.6 g agar
+
+- Processing of the influent wastewater 
+Shake well, filter 90ml of sample. Place the filter’s upper side (with bacteria) on top to the plate, place in 37C for incubation. 
+*(only 100 ul now)
+
+- Isolation of bacteria colony. 
+Pick up colonies from the plate, each colony in each tube (10 ml LB broth with 1ul antibiotic) in 50ml centrifuge tube for shake overnight. 
+50% glycerol 1:1 (v:v) with LB broth in Storage tube. 
+
+- cell counts
+Collect 0.1ml original wastewater into 0.9ml miliQ, then collect 0.1ml mix1 into 0.9ml miliQ, then collect 0.1ml to spread on plate. After 18h, count the colony number and x1000 will be the number of colonies in 1ml. 
+Collect 0.1ml original wastewater into 0.9ml miliQ, then collect 0.1ml mix1 into 0.9ml miliQ, then collect 0.1ml mix1 into 0.9ml miliQ, then collect 0.1ml to spread on plate. After 18h, count the colony number and x1000 will be the number of colonies in 1ml. 
+Number of counts should be around 30-300 to be accepted as accurate counts. 
+
