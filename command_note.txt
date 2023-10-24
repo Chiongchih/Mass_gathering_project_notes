@@ -350,19 +350,22 @@ fi
 
 
 ###########################genetic_context_in_batch################################################
-> result.fasta
 
-input_file='ACI_file_contig.csv'
+ARG=ACI
+
+> ./AI_genetic_context/"$ARG"_result.fasta
+
+input_file=./AI_genetic_context/"$ARG"_file_contig.csv
 
 while IFS=',' read -r input_file contig_name; do
     full_input_file="$input_file.reformat_contigs.fa"
-    full_contig_name=$(echo "$contig_name" | rev | cut -c 4- | rev)
+    full_contig_name=$(echo "$contig_name" | cut -c -14)
     line_number=$(grep -n -w "$full_contig_name" "$full_input_file" | cut -d ':' -f 1)
     if [ -n "$line_number" ]; then
         contig_id=$(awk "NR==$line_number {print \"$full_contig_name\"\"_\"\"${full_input_file%%.*}\"}" "$full_input_file")
         sequence=$(awk "NR==$line_number {getline; print}" "$full_input_file")
-        echo ">$contig_id" >> result.fasta
-        echo "$sequence" >> result.fasta
+        echo ">$contig_id" >> ./AI_genetic_context/'$ARG'_result.fasta
+        echo "$sequence" >> ./AI_genetic_context/'$ARG'_result.fasta
     else
         echo "Contig '$full_contig_name' not found in '$full_input_file'."
     fi
