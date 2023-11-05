@@ -356,6 +356,7 @@ ARG=ACI
 > ./AI_genetic_context/cphA2_result.fasta
 
 input_file=./AI_genetic_context/cphA2_file_contig.csv
+grep -l -H OXA- *.txt | xargs awk '/OXA-/{print FILENAME ":" $0}' > ../OXA_hits.txt
 
 while IFS=',' read -r input_file contig_name; do
     full_input_file="$input_file.reformat_contigs.fa"
@@ -372,6 +373,7 @@ while IFS=',' read -r input_file contig_name; do
 done < "$input_file"
 
 
+while IFS=',' read -r input_file contig_name; do     full_input_file="$input_file.reformat_contigs.fa";     full_contig_name=$(echo "$contig_name" | cut -c -14);     line_number=$(grep -n -w "$full_contig_name" "$full_input_file" | cut -d ':' -f 1);     if [ -n "$line_number" ]; then         contig_id=$(awk "NR==$line_number {print \"$full_contig_name\"\"_\"\"${full_input_file%%.*}\"}" "$full_input_file");         sequence=$(awk "NR==$line_number {getline; print}" "$full_input_file");         echo ">$contig_id" >> ./AI_genetic_context/TEM_result.fasta;         echo "$sequence" >> ./AI_genetic_context/TEM_result.fasta;     else         echo "Contig '$full_contig_name' not found in '$full_input_file'.";     fi; done < "$input_file"
 
 
 
