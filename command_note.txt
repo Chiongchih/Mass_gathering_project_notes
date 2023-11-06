@@ -365,8 +365,8 @@ while IFS=',' read -r input_file contig_name; do
     if [ -n "$line_number" ]; then
         contig_id=$(awk "NR==$line_number {print \"$full_contig_name\"\"_\"\"${full_input_file%%.*}\"}" "$full_input_file")
         sequence=$(awk "NR==$line_number {getline; print}" "$full_input_file")
-        echo ">$contig_id" >> ./AI_genetic_context/cphA2_result.fasta
-        echo "$sequence" >> ./AI_genetic_context/cphA2_result.fasta
+        echo ">$contig_id" >> ./AI_genetic_context/OXA_MESBL_result.fasta
+        echo "$sequence" >> ./AI_genetic_context/OXA_MESBL_result.fasta
     else
         echo "Contig '$full_contig_name' not found in '$full_input_file'."
     fi
