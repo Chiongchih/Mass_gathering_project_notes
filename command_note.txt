@@ -376,8 +376,8 @@ done < "$input_file"
 while IFS=',' read -r input_file contig_name; do     full_input_file="$input_file.reformat_contigs.fa";     full_contig_name=$(echo "$contig_name" | cut -c -14);     line_number=$(grep -n -w "$full_contig_name" "$full_input_file" | cut -d ':' -f 1);     if [ -n "$line_number" ]; then         contig_id=$(awk "NR==$line_number {print \"$full_contig_name\"\"_\"\"${full_input_file%%.*}\"}" "$full_input_file");         sequence=$(awk "NR==$line_number {getline; print}" "$full_input_file");         echo ">$contig_id" >> ./AI_genetic_context/TEM_result.fasta;         echo "$sequence" >> ./AI_genetic_context/TEM_result.fasta;     else         echo "Contig '$full_contig_name' not found in '$full_input_file'.";     fi; done < "$input_file"
 
 
-
-
+#ONT#flye#assembly_info
+find . -type d -name '*_flye' -print0 | while IFS= read -r -d $'\0' folder; do folder_name=$(basename "$folder"); assembly_file="$folder/assembly.fasta"; if [ -f "$assembly_file" ]; then new_assembly_name="${folder_name/_flye/}"_ONT_genome.fna; mv "$assembly_file" "$folder/$new_assembly_name"; fi; info_file="$folder/assembly_info.txt"; if [ -f "$info_file" ]; then new_info_name="${folder_name/_flye/}"_assembly_info.txt; mv "$info_file" "$folder/$new_info_name"; fi; cp "$folder/$new_assembly_name" "$folder/$new_info_name" colony_genome_assembly_reports/; done
 
 
 
