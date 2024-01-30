@@ -45,6 +45,7 @@ rgi main --input_sequence /Volumes/Changzhi_WD4T/Chapter2_datasets/MegaHIT_assem
 --input_type contig \
 --local --clean --num_threads 8
 
+
 #Quick check rgi results
 for i in *.output.txt
 do
@@ -379,5 +380,6 @@ while IFS=',' read -r input_file contig_name; do     full_input_file="$input_fil
 #ONT#flye#assembly_info
 find . -type d -name '*_flye' -print0 | while IFS= read -r -d $'\0' folder; do folder_name=$(basename "$folder"); assembly_file="$folder/assembly.fasta"; if [ -f "$assembly_file" ]; then new_assembly_name="${folder_name/_flye/}"_ONT_genome.fna; mv "$assembly_file" "$folder/$new_assembly_name"; fi; info_file="$folder/assembly_info.txt"; if [ -f "$info_file" ]; then new_info_name="${folder_name/_flye/}"_assembly_info.txt; mv "$info_file" "$folder/$new_info_name"; fi; cp "$folder/$new_assembly_name" "$folder/$new_info_name" colony_genome_assembly_reports/; done
 
-
+#################To set up miniconda environment###################
+source /ibex/user/wangc0c/mambaforge/bin/activate 
 
