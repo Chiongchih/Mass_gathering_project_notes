@@ -382,4 +382,8 @@ find . -type d -name '*_flye' -print0 | while IFS= read -r -d $'\0' folder; do f
 
 #################To set up miniconda environment###################
 source /ibex/user/wangc0c/mambaforge/bin/activate 
+conda env list
+source activate xxx
+
+find . -type f -size -100c -delete
 
