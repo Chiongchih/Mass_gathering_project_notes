@@ -386,4 +386,5 @@ conda env list
 source activate xxx
 
 find . -type f -size -100c -delete
-
+#MGED mobile database###
+/home/wangc0c/Tools/MGED/MGED_bowtiedb
